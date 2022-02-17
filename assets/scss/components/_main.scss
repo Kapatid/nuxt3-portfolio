@@ -1,0 +1,55 @@
+main {
+  @apply z-0 relative;
+
+  .cover {
+    @apply h-full
+    z-20
+    absolute
+    hidden;
+  }
+
+  .grid-repos {
+    @apply h-full
+    overflow-x-hidden
+    overflow-y-auto
+    grid 
+    grid-cols-1 
+    md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 wide:grid-cols-6
+    place-items-center
+    content-start
+    gap-y-6;
+  }
+}
+
+.grid-repos .box-repo {
+  @apply rounded
+  relative
+  bg-theme-background
+  overflow-hidden
+  h-64 w-64 
+  md:h-[19rem] md:w-[19rem]
+  xl:h-64 xl:w-64 
+  border-2 p-4
+  border-dashed
+  cursor-pointer;
+
+  h2 {
+    @apply text-3xl truncate;
+  }
+
+  p {
+    @apply line-clamp-4;
+  }
+
+  #scroll-topics {
+    .swiper-slide {
+      @apply bg-theme-on-background 
+      w-auto mr-4
+      select-none
+      p-2 
+      rounded-md  
+      text-theme-background
+      text-xs;
+    }
+  }
+}

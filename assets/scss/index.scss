@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "base/typography";
+
+:root {
+  --primary: rgb(76, 175, 80);
+  --secondary: rgb(51, 171, 160);
+  --tertiary: rgb(51, 171, 160);
+  --background: rgb(255, 255, 255);
+  --surface: rgb(255, 255, 255);
+  --error: rgb(176, 0, 32);
+  --on-primary: rgb(255, 255, 255);
+  --on-secondary: rgb(255, 255, 255);
+  --on-background: rgb(33, 33, 33);
+  --on-surface: rgb(33, 33, 33);
+  --on-error: rgb(255, 255, 255);
+  --scrollbar-width: 8px;
+}
+
+.dark {
+  --primary: rgb(95, 186, 99);
+  --background: rgb(33, 33, 33);
+  --surface: rgb(33, 33, 33);
+  --on-background: rgb(255, 255, 255);
+  --on-surface: rgb(255, 255, 255);
+}
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: var(--scrollbar-width);
+    scrollbar-color: var(--on-background) transparent;
+  }
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--on-background);
+    border-radius: 10px;
+    border: transparent;
+  }
+
+  #__nuxt {
+    @apply font-workSans
+    transition-all
+    w-full 
+    h-screen 
+    grid
+    bg-theme-background
+    text-theme-on-background;
+  }
+
+  code {
+    @apply font-pridi-extraLight;
+  }
+  h1 {
+    @apply font-josefinSans-bold
+    text-3xl
+    md:text-3xl 
+    lg:text-5xl;
+  }
+  h2 {
+    @apply font-rubik
+    text-2xl 
+    md:text-2xl 
+    lg:text-4xl;
+  }
+  h3 {
+    @apply font-medium
+    text-xl
+    md:text-xl 
+    lg:text-3xl;
+  }
+  h4 {
+    @apply font-medium text-3xl;
+  }
+  p {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+  a {
+    @apply underline italic;
+  }
+
+  button {
+    @apply border-none
+    bg-theme-primary
+    text-sm md:text-lg lg:text-xl
+    text-theme-on-primary
+    py-3
+    px-4
+    rounded;
+  }
+  svg {
+    @apply fill-theme-on-background select-none;
+  }
+}
